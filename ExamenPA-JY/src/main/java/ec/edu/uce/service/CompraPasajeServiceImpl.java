@@ -53,4 +53,18 @@ public class CompraPasajeServiceImpl implements ICompraPasajeService{
 			LOG.info("cantidad Asientos ocupados");
 		}
 	}
+
+	@Override
+	public void realizarCheckIn(String numeroCompraPasaje) {
+		// TODO Auto-generated method stub
+		CompraPasaje compra=this.buscarNumero(numeroCompraPasaje);
+		compra.setEstado("I");
+		this.update(compra);
+	}
+
+	@Override
+	public CompraPasaje buscarNumero(String numeroCompraPasaje) {
+		// TODO Auto-generated method stub
+		return this.compraRepo.buscarNumero(numeroCompraPasaje);
+	}
 }

@@ -9,4 +9,6 @@ public interface ICompraPasajeRepo {
 	public CompraPasaje read(Integer id); 
 	public void update(CompraPasaje compraPasaje); 
 	public void delete(Integer id); 
+	
+	public CompraPasaje buscarNumero(String numeroCompraPasaje);
 }

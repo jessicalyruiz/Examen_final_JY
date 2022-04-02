@@ -10,4 +10,7 @@ public interface ICompraPasajeService {
 	public void delete(Integer id); 
 	
 	public void reservarPasajes(String numeroVuelo);
+	public void realizarCheckIn(String numeroCompraPasaje);
+	
+	public CompraPasaje buscarNumero(String numeroCompraPasaje);
 }
