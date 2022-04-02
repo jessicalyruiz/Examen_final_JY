@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link th:href="@{/css/misprimerosestilos.css}" rel="stylesheet">
+	 <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+<body>
+<h1>Vuelos Disponibles</h1>
+<div class="table table-dark table-striped"> 
+<table>
+	<!--Para tablas dimanicas-->
+	<!--cabecera tabla-->
+	<thead>
+		<tr>
+			<th>Numero Vuelo</th>
+			<th>Origen</th>
+			<th>Destino</th>
+			<th>Categoria</th>
+			<th>Nombre Avion</th>
+			<th>Valor Asiento</th>
+		</tr>
+	</thead>
+	<!--cuerpo tabla-->
+	<tbody>
+		<tr th:each="vuelos:${vuelos}">
+	
+			<td th:text="${vuelos.numero}" ></td>
+			<td th:text="${vuelos.origen}" ></td>
+			<td th:text="${vuelos.destino}" ></td>
+			<td th:text="${vuelos.categoria}" ></td>
+			<td th:text="${vuelos.avion.nombre}" ></td>
+			<td th:text="${vuelos.valorAsiento}" ></td>		
+		<tr>
+	</tbody>
+</table>
+</div>
+</body>
+
+</html>

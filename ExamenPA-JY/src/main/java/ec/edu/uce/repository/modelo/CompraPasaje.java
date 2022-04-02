@@ -1,6 +1,7 @@
 package ec.edu.uce.repository.modelo;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -31,8 +32,8 @@ public class CompraPasaje {
 	private String numero;
 	
 	@Column(name = "copa_fecha_compra", columnDefinition = "TIMESTAMP")
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private LocalDate fechaCompra;
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+	private LocalDateTime fechaCompra;
 	
 	@Column(name = "copa_numero_tarjeta")
 	private String numeroTarjeta;
@@ -69,11 +70,13 @@ public class CompraPasaje {
 		this.numero = numero;
 	}
 
-	public LocalDate getFechaCompra() {
+
+
+	public LocalDateTime getFechaCompra() {
 		return fechaCompra;
 	}
 
-	public void setFechaCompra(LocalDate fechaCompra) {
+	public void setFechaCompra(LocalDateTime fechaCompra) {
 		this.fechaCompra = fechaCompra;
 	}
 
@@ -123,7 +126,8 @@ public class CompraPasaje {
 				+ numeroTarjeta + ", cantidadAsientosComprados=" + cantidadAsientosComprados + ", estado=" + estado
 				+ "]";
 	}
-	
+
+
 	
 	
 }

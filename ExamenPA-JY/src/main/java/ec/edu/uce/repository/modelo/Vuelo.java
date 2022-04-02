@@ -1,6 +1,8 @@
 package ec.edu.uce.repository.modelo;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -32,8 +34,8 @@ public class Vuelo {
 	private String numero;
 	
 	@Column(name = "vuel_fecha_vuelo", columnDefinition = "TIMESTAMP")
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private LocalDate fechaVuelo;
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+	private LocalDateTime fechaVuelo;
 	
 	@Column(name = "vuel_origen")
 	private String origen;
@@ -49,7 +51,7 @@ public class Vuelo {
 	private Integer asientosDisponibles;
 	
 	@Column(name = "vuel_valor_asiento")
-	private String valorAsiento;
+	private BigDecimal valorAsiento;
 	
 	
 	@Column(name = "vuel_estado")
@@ -79,11 +81,13 @@ public class Vuelo {
 		this.numero = numero;
 	}
 
-	public LocalDate getFechaVuelo() {
+
+
+	public LocalDateTime getFechaVuelo() {
 		return fechaVuelo;
 	}
 
-	public void setFechaVuelo(LocalDate fechaVuelo) {
+	public void setFechaVuelo(LocalDateTime fechaVuelo) {
 		this.fechaVuelo = fechaVuelo;
 	}
 
@@ -119,11 +123,13 @@ public class Vuelo {
 		this.asientosDisponibles = asientosDisponibles;
 	}
 
-	public String getValorAsiento() {
+
+
+	public BigDecimal getValorAsiento() {
 		return valorAsiento;
 	}
 
-	public void setValorAsiento(String valorAsiento) {
+	public void setValorAsiento(BigDecimal valorAsiento) {
 		this.valorAsiento = valorAsiento;
 	}
 
@@ -157,7 +163,8 @@ public class Vuelo {
 				+ ", destino=" + destino + ", categoria=" + categoria + ", asientosDisponibles=" + asientosDisponibles
 				+ ", valorAsiento=" + valorAsiento + ", estado=" + estado + "]";
 	}
-	
+
+
 	
 	
 }

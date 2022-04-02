@@ -27,6 +27,9 @@ public class Avion {
 	@Column(name = "avio_capacidad_asientos")
 	private Integer capacidadAsientos;
 	
+	@Column(name = "avio_nombre")
+	private String nombre;
+	
 	@OneToMany(mappedBy = "avion")
 	private List<Vuelo> vuelos;
 
@@ -47,6 +50,14 @@ public class Avion {
 		this.capacidadAsientos = capacidadAsientos;
 	}
 
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
 	public List<Vuelo> getVuelos() {
 		return vuelos;
 	}
@@ -57,8 +68,9 @@ public class Avion {
 
 	@Override
 	public String toString() {
-		return "Avion [id=" + id + ", capacidadAsientos=" + capacidadAsientos + "]";
+		return "Avion [id=" + id + ", capacidadAsientos=" + capacidadAsientos + ", nombre=" + nombre + "]";
 	}
+
 	
 
 	
